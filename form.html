@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Name" required="name" />
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        required
+        minlength="8"
+        maxlength="15"
+      />
+
+      <label for="age">Age</label>
+      <input type="number" id="age" min="18" max="60" required step="10" />
+
+      <label>Gender</label><br />
+      <label for="male">Male</label>
+      <input type="radio" id="male" name="gender" />
+      <label for="female">Female</label>
+      <input type="radio" id="female" name="gender" /><br />
+      Subject:
+      <br />
+      HTML <input type="checkbox" /> CSS <input type="checkbox" /> JS
+      <input type="checkbox" />
+      <br />
+
+      City
+
+      <select>
+        <option>Gurgaon</option>
+        <option>Delhi</option>
+        <option>Gurgaon</option>
+        <option>Gurgaon</option>
+        <option>Gurgaon</option>
+      </select> <br>
+
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>
