@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul li span {
+        margin-right: 20px;
+      }
+      ul li {
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style-type: decimal;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="inputdata" />
+      <input type="date" id="inputdate" />
+      <button onclick="hanldeAddEvent()">Add</button>
+    </div>
+    <ul></ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+      ul.innerHTML = localStorage.getItem("ul");
+      function hanldeAddEvent() {
+        const inoutdata = document.getElementById("inputdata").value;
+        const inoutdate = document.getElementById("inputdate").value;
+        const ul = document.querySelector("ul");
+
+        let innerData = `<li>
+        <span> ${inoutdata}</span><span>${inoutdate}</span>
+        <button class="delete">Delete</button>
+      </li> `;
+        ul.innerHTML = ul.innerHTML + innerData;
+
+        localStorage.setItem("ul", `${ul.innerHTML}`);
+
+        console.log(localStorage.getItem(`ul`));
+
+        const buttons = document.querySelectorAll(".delete");
+
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener("click", () => {
+            ul.removeChild(buttons[i].parentElement);
+            localStorage.setItem("ul", `${ul.innerHTML}`);
+          });
+        }
+      }
+
+      let jsObj = {
+        name: "Sudhir",
+        city: "Gurgaon",
+      };
+
+      localStorage.setItem("a", JSON.stringify(jsObj));
+      console.log(JSON.parse(localStorage.getItem("a")));
+    </script>
+  </body>
+</html>

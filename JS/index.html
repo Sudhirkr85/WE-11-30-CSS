@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="i">Sudhir</h1>
+    <button onclick="changeColor()">Change Color</button>
+
+    <input type="text" oninput="print()" id="in" />
+
+    <script>
+      // setTimeout(changeColor,1000);
+      // setTimeout(() => {
+      //   alert("Sudhir");
+      // }, 1000);
+
+      //  setInterval(() => {
+      //   alert("Sudhir");
+      // }, 3000);
+
+      // window.alert("Sudhir");
+      // window.prompt("Sudhir");
+      // window.confirm("Sudhir");
+
+      const h1 = document.getElementById("i");
+
+      function changeColor() {
+        h1.style.color = "red";
+        let p = document.createElement("p");
+        p.innerText = "hello Users";
+        p.style.color = "green";
+        document.body.appendChild(p);
+      }
+
+      function print(event) {
+        let input = document.getElementById("in");
+        console.log(input.value);
+      }
+
+      let obj = { name: "Sudhir" };
+    </script>
+  </body>
+</html>
